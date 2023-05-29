@@ -1,0 +1,67 @@
+Taryn Ries 
+
+Evolution Meal Planning 
+
+Tech Stack 
+For Evolution Meal Planning, the tech stack will include React for the front end, Node for the back end, and PostgreSQL for the database. The application will be deployed on Heroku. 
+
+Project Focus
+The project will be a full-stack application with greater emphasis on the front-end UI. 
+
+Platform
+Evolution Meal Planning will be a responsive web application that is accessible on desktop devices. 
+
+Project Goal 
+The primary goal of this website is to create a web application that allows users to experience greater ease and enjoyment with meal planning. To be able to select from recipes based on preference, generate shopping lists based on these recipes, add additional items to these lists and check things off as they go. 
+
+Users
+The target demographic for Evolution Meal Planning includes a wide range of users including anyone that grocery shops and cooks meals at home who are looking to create ease in this process. 
+
+Data and API
+I plan on using Spoonacular API to implement recipe, ingredient, meal category and shopping list data. 
+
+Project Approach
+
+Database Schema: 
+User Table:
+user_id (Primary Key)
+username
+password
+email
+Recipe Table:
+recipe_id (Primary Key)
+title
+description
+instructions
+meal_category_id (Foreign Key referencing Meal Category Table)
+Meal Category Table:
+meal_category_id (Primary Key)
+name
+Ingredient Table:
+ingredient_id (Primary Key)
+name
+description
+Recipe-Ingredient Mapping Table:
+recipe_id (Foreign Key referencing Recipe Table)
+ingredient_id (Foreign Key referencing Ingredient Table)
+quantity (e.g., 2 cups, 3 teaspoons, etc.)
+Shopping List Table:
+list_id (Primary Key)
+user_id (Foreign Key referencing User Table)
+name
+Shopping List Item Table:
+item_id (Primary Key)
+list_id (Foreign Key referencing Shopping List Table)
+ingredient_id (Foreign Key referencing Ingredient Table)
+quantity (e.g., 2 cups, 3 teaspoons, etc.)
+checked (boolean indicating whether the item has been checked off)
+
+API Issues: Potential API issues include request limits, data accuracy and availability, and reliability in the case of any downtime on the API website. 
+
+Sensitive information: The user's login information should be kept secure.
+
+Functionality: Core features include user user registration and authentication, recipe browsing and selection, meal category filtering, shopping list generation, custom ingredient addition, and shopping list management. 
+
+User flow: Users will create an account or login using their credentials. Users will then browse through a collection of recipes and add to their meal plan or shopping list. Based on the selected recipes users can generate shopping lists with required ingredients. Users can then add additional items to their shopping lists and then ultimately view, modify and check off items on their lists.
+
+Stretch goals: Stretch goals for if time allows could include recipe reviews and ratings, meal planner to plan recipes and lists for certain dates, or favorites and saved recipes which would allow users to save their favorite recipes for easy future access. 
