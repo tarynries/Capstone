@@ -1,5 +1,7 @@
 "use strict";
 
+// need to change all of this once I add routes 
+
 /** Express app for jobly. */
 
 const express = require("express");
@@ -8,10 +10,16 @@ const cors = require("cors");
 const { NotFoundError } = require("./expressError");
 
 const { authenticateJWT } = require("./middleware/auth");
-const authRoutes = require("./routes/auth");
-const companiesRoutes = require("./routes/companies");
-const usersRoutes = require("./routes/users");
-const jobsRoutes = require("./routes/jobs");
+// const authRoutes = require("./routes/auth");
+const ingredientRoutes = require("./routes/ingredients");
+const mealCategoryRoutes = require("./routes/mealCategory")
+const recipeIngredientRoutes = require("./routes/recipeIngredient");
+const recipeRoutes = require("./routes/recipes");
+const shoppingListRoutes = require("./routes/shoppingList");
+const shoppingListItemRoutes = require("./routes/shoppingListItem");
+const userRoutes = require("./routes/user");
+const userFavoritesRoutes = require("./routes/userFavorites");
+
 
 const morgan = require("morgan");
 
@@ -56,10 +64,15 @@ app.use(express.json());
 app.use(morgan("tiny"));
 app.use(authenticateJWT);
 
-app.use("/auth", authRoutes);
-app.use("/companies", companiesRoutes);
-app.use("/users", usersRoutes);
-app.use("/jobs", jobsRoutes);
+// app.use("/auth", authRoutes);
+app.use("/ingredients", ingredientRoutes)
+app.use("/mealCategory", mealCategoryRoutes);
+app.use("/recipeIngredient", recipeIngredientRoutes);
+app.use("/recipes", recipeRoutes);
+app.use("/shoppingList", shoppingListRoutes);
+app.use("/shoppingListItem", shoppingListItemRoutes);
+app.use("/user", userRoutes);
+app.use("/userFavorites", userFavoritesRoutes);
 
 
 /** Handle 404 errors -- this matches everything */
