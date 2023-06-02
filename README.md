@@ -1,0 +1,1 @@
+API Link: https://spoonacular.com/food-api
