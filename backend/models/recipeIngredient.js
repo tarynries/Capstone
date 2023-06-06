@@ -15,6 +15,10 @@ class RecipeIngredientMapping {
             [recipeId]
         );
 
+        console.log("SQL query:", result.sql);
+        console.log("SQL parameters:", result.values);
+        console.log("SQL query result:", result.rows);
+
         return result.rows;
     }
 
@@ -59,6 +63,7 @@ class RecipeIngredientMapping {
         if (!mapping) {
             throw new NotFoundError("Recipe ingredient mapping not found");
         }
+        return mapping;
     }
 }
 

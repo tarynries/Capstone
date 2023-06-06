@@ -7,7 +7,7 @@ const router = express.Router();
  *
  * Returns a list of all meal categories.
  **/
-router.get("/meal-categories", async function (req, res, next) {
+router.get("/mealCategory", async function (req, res, next) {
     try {
         const mealCategories = await MealCategory.getAll();
         return res.json({ mealCategories });
@@ -20,7 +20,7 @@ router.get("/meal-categories", async function (req, res, next) {
  *
  * Returns a specific meal category by its ID.
  **/
-router.get("/meal-categories/:id", async function (req, res, next) {
+router.get("/mealCategory/:id", async function (req, res, next) {
     try {
         const { id } = req.params;
         const mealCategory = await MealCategory.getById(id);

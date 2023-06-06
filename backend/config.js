@@ -11,14 +11,15 @@ const SECRET_KEY = process.env.SECRET_KEY || "evolution123";
 
 const PORT = +process.env.PORT || 3001;
 
-console.log('DATABASE_URL:', process.env.DATABASE_URL);
 
 // Use dev database, testing database, or via env var, production database
 function getDatabaseUri() {
     return (process.env.NODE_ENV === "test")
-        ? "meal_planning_test"
+        ? process.env.DATABASE_URL_TEST || "meal_planning_test"
         : process.env.DATABASE_URL || "meal_planning";
 }
+
+console.log('DATABASE_URL:', process.env.DATABASE_URL);
 // function getDatabaseUri() {
 //     if (process.env.NODE_ENV === "test") {
 //         return process.env.TEST_DATABASE_URL || "meal_planning_test";

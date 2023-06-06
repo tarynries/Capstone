@@ -15,7 +15,7 @@ const router = express.Router();
  **/
 router.get("/recipes", ensureLoggedIn, async function (req, res, next) {
     try {
-        const recipes = await Recipe.getAllRecipes();
+        const recipes = await Recipe.getAll();
         return res.json({ recipes });
     } catch (err) {
         return next(err);
@@ -43,7 +43,7 @@ router.get("/recipes/meals/:categoryId", ensureLoggedIn, async function (req, re
 router.get("/recipes/:id", ensureLoggedIn, async function (req, res, next) {
     try {
         const recipeId = req.params.id;
-        const recipe = await Recipe.getRecipeById(recipeId);
+        const recipe = await Recipe.getById(recipeId);
         if (!recipe) {
             // Recipe not found
             return res.status(404).json({ error: "Recipe not found" });

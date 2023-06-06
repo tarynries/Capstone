@@ -73,7 +73,7 @@ class User {
             [
                 username,
                 hashedPassword,
-                email,
+                email
             ],
         );
 
@@ -90,7 +90,7 @@ class User {
     static async findAll() {
         const result = await db.query(
             `SELECT username,
-                  email,
+                  email
            FROM users
            ORDER BY username`,
         );

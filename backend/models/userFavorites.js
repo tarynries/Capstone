@@ -58,6 +58,7 @@ class UserFavorite {
      * Returns [{ user_id, recipe_id, title, description, image_url, meal_category_id }, ...]
      **/
     static async getAllFavorites(userId) {
+        console.log('Getting all favorites for user:', userId);
         const result = await db.query(
             `SELECT uf.user_id,
               uf.recipe_id,
@@ -71,6 +72,9 @@ class UserFavorite {
             [userId]
         );
 
+        // console.log('Query:', query);
+
+        console.log('Query result:', result.rows);
         return result.rows;
     }
 }
