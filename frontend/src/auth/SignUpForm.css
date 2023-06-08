@@ -1,0 +1,38 @@
+/* SignUpForm.css */
+
+body {
+    background-color: rgb(88, 166, 54);
+}
+
+.SignupForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    border: 2px solid #000;
+    padding: 20px;
+    background-color: white;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card-body {
+        gap: 5px;
+    }
+}
